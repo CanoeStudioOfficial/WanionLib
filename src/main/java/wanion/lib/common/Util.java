@@ -79,7 +79,7 @@ public final class Util
 		Item item;
 		if (itemStack == null || (item = itemStack.getItem()) == null)
 			return "";
-		return item.delegate.name().getResourceDomain();
+		return item.delegate.name().getNamespace();
 	}
 
 	public static boolean isFromVanilla(@Nonnull final ItemStack itemStack)
@@ -158,6 +158,6 @@ public final class Util
 	public static ModContainer getModContainerFromStack(@Nonnull final ItemStack itemStack)
 	{
 		final ResourceLocation resourceLocation = itemStack.getItem().getRegistryName();
-		return resourceLocation != null ? getModContainerFromModId(resourceLocation.getResourceDomain()) : null;
+		return resourceLocation != null ? getModContainerFromModId(resourceLocation.getNamespace()) : null;
 	}
 }

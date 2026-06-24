@@ -143,7 +143,7 @@ public class TextField implements IField<TextField>
 	@Override
 	public void receiveNBT(@Nonnull final NBTTagCompound fieldUpdate)
 	{
-		if (fieldUpdate.hasNoTags() || !fieldName.equals(fieldUpdate.getString("fieldName")))
+		if (fieldUpdate.isEmpty() || !fieldName.equals(fieldUpdate.getString("fieldName")))
 			return;
 		final EntityPlayer updatePlayer = WanionLib.proxy.getPlayerByUsername(fieldUpdate.getString("player"));
 		final boolean interacting = fieldUpdate.getBoolean("interacting");

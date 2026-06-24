@@ -83,7 +83,7 @@ public final class ControlController extends Dependencies<IControl<?>> implement
 	public void afterWriteNBT(@Nonnull final NBTTagCompound smartNBT)
 	{
 		final NBTTagList controlTagList = smartNBT.getTagList("control", 10);
-		if (controlTagList.hasNoTags())
+		if (controlTagList.isEmpty())
 			return;
 		getInstances().forEach(control -> {
 			for (int i = 0; i < controlTagList.tagCount(); i++)
@@ -95,7 +95,7 @@ public final class ControlController extends Dependencies<IControl<?>> implement
 	public void readNBT(@Nonnull final NBTTagCompound smartNBT)
 	{
 		final NBTTagList controlTagList = smartNBT.getTagList("control", 10);
-		if (controlTagList.hasNoTags())
+		if (controlTagList.isEmpty())
 			return;
 		getInstances().forEach(control -> {
 			for (int i = 0; i < controlTagList.tagCount(); i++)

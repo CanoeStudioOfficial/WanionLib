@@ -110,7 +110,7 @@ public class MatchingController implements IController<MatchingController, Abstr
 	public void afterWriteNBT(@Nonnull final NBTTagCompound smartNBT)
 	{
 		final NBTTagList matchingTagList = smartNBT.getTagList("matching", 10);
-		if (matchingTagList.hasNoTags())
+		if (matchingTagList.isEmpty())
 			return;
 		for (int i = 0; i < matchingTagList.tagCount(); i++) {
 			final NBTTagCompound matchingTag = matchingTagList.getCompoundTagAt(i);
@@ -124,7 +124,7 @@ public class MatchingController implements IController<MatchingController, Abstr
 	public void readNBT(@Nonnull final NBTTagCompound smartNBT)
 	{
 		final NBTTagList matchingTagList = smartNBT.getTagList("matching", 10);
-		if (matchingTagList.hasNoTags())
+		if (matchingTagList.isEmpty())
 			return;
 		for (int i = 0; i < matchingTagList.tagCount(); i++) {
 			final NBTTagCompound matchingTag = matchingTagList.getCompoundTagAt(i);

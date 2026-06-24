@@ -121,7 +121,7 @@ public abstract class WTileEntity extends TileEntity implements ISidedInventory
         }
         controllers.forEach(controller -> nbtTagCompound.merge(controller.writeNBT()));
         controllers.forEach(controller -> controller.afterWriteNBT(nbtTagCompound));
-        if (!nbtTagList.hasNoTags())
+        if (!nbtTagList.isEmpty())
             nbtTagCompound.setTag("Contents", nbtTagList);
         return nbtTagCompound;
     }

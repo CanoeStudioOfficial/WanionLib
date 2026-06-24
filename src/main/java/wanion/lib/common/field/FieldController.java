@@ -109,7 +109,7 @@ public class FieldController implements IController<FieldController, IField<?>>,
 	public void afterWriteNBT(@Nonnull final NBTTagCompound smartNBT)
 	{
 		final NBTTagList fieldTagList = smartNBT.getTagList("field", 10);
-		if (fieldTagList.hasNoTags())
+		if (fieldTagList.isEmpty())
 			return;
 		for (int i = 0; i < fieldTagList.tagCount(); i++) {
 			final NBTTagCompound fieldTag = fieldTagList.getCompoundTagAt(i);
@@ -123,7 +123,7 @@ public class FieldController implements IController<FieldController, IField<?>>,
 	public void readNBT(@Nonnull final NBTTagCompound smartNBT)
 	{
 		final NBTTagList fieldTagList = smartNBT.getTagList("field", 10);
-		if (fieldTagList.hasNoTags())
+		if (fieldTagList.isEmpty())
 			return;
 		for (int i = 0; i < fieldTagList.tagCount(); i++) {
 			final NBTTagCompound fieldTag = fieldTagList.getCompoundTagAt(i);
